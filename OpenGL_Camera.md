@@ -1,8 +1,9 @@
-2018/1/18 17:13:48 
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+2018/1/18 17:13:48
 
 ----------
 
-#Coordinate Transformation: From Euler to Quaternion
+#Coordinate Transformation: From Euler to Quaternion#
 
 * [Introduction](#Introduction)
 * [Linear Transformation](#Linear-transformation)
@@ -46,7 +47,7 @@ $$
 比例变换也很简单：
 
 \begin{equation}
-\begin{bmatrix} x' \\\\ y' \\\\ z'\\\\ \end{bmatrix} = 
+\begin{bmatrix} x' \\\\ y' \\\\ z'\\\\ \end{bmatrix} =
 \begin{bmatrix} a & & \\\\ & b & \\\\ & & c \\\\ \end{bmatrix}
 \begin{bmatrix} x \\\\ y \\\\ z\\\\ \end{bmatrix}
 \end{equation}
@@ -75,7 +76,7 @@ P\_{y}' = xcos\\theta + ysin\\theta
 $$
 展开成矩阵的形式：
 \begin{equation}
-\begin{bmatrix} P\_{x}' \\\\ P\_{y}'\end{bmatrix} = 
+\begin{bmatrix} P\_{x}' \\\\ P\_{y}'\end{bmatrix} =
 \begin{bmatrix} cos\\theta & -sin\\theta \\\\ sin\\theta & cos\\theta \end{bmatrix}
 \end{equation}
 
@@ -83,21 +84,21 @@ $$
 
 $$
 \begin{equation}
-R\_{x}(\theta) = 
+R\_{x}(\theta) =
 \begin{bmatrix} 1 & 0 & 0 \\\\ 0 & cos\\theta & -sin\\theta \\\\ 0 & sin\\theta & cos\\theta \end{bmatrix}
 \end{equation}
 $$
 
 $$
 \begin{equation}
-R\_{z}(\\theta) = 
+R\_{z}(\\theta) =
 \begin{bmatrix} cos\\theta & -sin\\theta & 0 \\\\ sin\\theta & cos\\theta & 0 \\\\ 0 & 0 & 1 \end{bmatrix}
 \end{equation}
 $$
 
 $$
 \begin{equation}
-R\_{y}(\theta) = 
+R\_{y}(\theta) =
 \begin{bmatrix} cos\\theta & 0 & sin\\theta \\\\ 0 & 1 & 0 \\\\ -sin\\theta & 0 & cos\\theta \end{bmatrix}
 \end{equation}
 $$
@@ -170,8 +171,8 @@ $$
 
 $$
 \begin{equation}
-LookAt = 
-\begin{bmatrix} R\_{x} & R\_{y} & R\_{z} & 0\\\\ U\_{x} & U\_{y} & U\_{z} & 0\\\\ D\_{x} & D\_{y} & D\_{z} & 0 \\\\ 0 & 0 & 0 & 1\\\\ \end{bmatrix} * 
+LookAt =
+\begin{bmatrix} R\_{x} & R\_{y} & R\_{z} & 0\\\\ U\_{x} & U\_{y} & U\_{z} & 0\\\\ D\_{x} & D\_{y} & D\_{z} & 0 \\\\ 0 & 0 & 0 & 1\\\\ \end{bmatrix} *
 \begin{bmatrix} 1 & 0 & 0 & -P\_{x} \\\\ 0 & 1 & 0 & -P\_{y} \\\\  0 & 0 & 1 & -P\_{z} \\\\  0 & 0 & 0 & 1 \\\\ \end{bmatrix}
 \end{equation}
 $$
@@ -239,7 +240,7 @@ $$
     void processInput(GLFWwindow *window) {
         float cameraSpeed = 2.5f * deltaTime;
         ...
-    } 
+    }
 
 ####视角移动####
 
@@ -436,7 +437,7 @@ $$
 同理旋转过程中偏手性也不应该改变：
 
 $$
-\phi(P\_{1}) \times \phi(P\_{2}) = \phi(P\_{2} \times P\_{2}) 
+\phi(P\_{1}) \times \phi(P\_{2}) = \phi(P\_{2} \times P\_{2})
 $$
 
 我们将P<sub>1</sub>和P<sub>2</sub>看作是标量为0的四元数，结合上面的可得：
@@ -449,8 +450,8 @@ $$
 
 $$
 \begin{align}
-&\phi(P\_{1}P\_{2}) = -\phi(P\_{1} \cdot P\_{2}) + \phi(P\_{1} \times P\_{2}) \\\\ 
-&\phi(P\_{1}P\_{2}) = -\phi(P\_{1}) \cdot \phi(P\_{2}) + \phi(P\_{1}) \times \phi(P_\{2}) \\\\ 
+&\phi(P\_{1}P\_{2}) = -\phi(P\_{1} \cdot P\_{2}) + \phi(P\_{1} \times P\_{2}) \\\\
+&\phi(P\_{1}P\_{2}) = -\phi(P\_{1}) \cdot \phi(P\_{2}) + \phi(P\_{1}) \times \phi(P_\{2}) \\\\
 \end{align}
 $$
 
@@ -551,5 +552,3 @@ $$
 <h3 id="Quaternion-camera">Quaternion Camera</h3>
 
 <h2 id="Appendix-reference">Appendix & Reference</h2>
-
-
